@@ -1,4 +1,4 @@
-.form-wrapper {
+/* .form-wrapper {
     margin: 5rem 0;
 }
 .form-container {
@@ -11,7 +11,7 @@
         -7px -7px 10px rgba(60, 60, 222, 0.1);
     padding: 3rem 2rem;
     border-radius: 8px;
-}
+} */
 
 /* ==== form ====== */
 .form-container {
@@ -159,4 +159,8 @@
     color: #2155cd;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1), -3px 3px 5px rgba(0, 0, 0, 0.1),
         3px -3px 5px rgba(0, 0, 0, 0.1), -3px -3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-container .error {
+    color: red;
 }

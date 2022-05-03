@@ -1,11 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
+import { useAuthState } from "react-firebase-hooks/auth";
+import firebaseAuth from "../../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Header = () => {
     const [open, setOpen] = useState(false);
     const menuWrapperRef = useRef(null);
     const menuRef = useRef(null);
+
+    const [user] = useAuthState(firebaseAuth);
+
     const handleMenu = () => {
         setOpen(!open);
     };
@@ -39,16 +45,25 @@ const Header = () => {
                         <li>
                             <NavLink to="/blog">blog</NavLink>
                         </li>
-                        <li>
-                            <NavLink to="/login">login</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/register">register</NavLink>
-                        </li>
-                        <div className="user-info">
-                            <img src="" alt="photo" />
-                            <span className="name">samsuzzaman</span>
-                        </div>
+                        {!user?.uid && (
+                            <>
+                                <li>
+                                    <NavLink to="/login">login</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/register">register</NavLink>
+                                </li>
+                            </>
+                        )}
+                        {user?.uid && (
+                            <div className="user-info">
+                                <img src={user?.photoURL} alt="profile" />
+                                <span className="name">{user?.email}</span>
+                                <button onClick={() => signOut(firebaseAuth)}>
+                                    sign out
+                                </button>
+                            </div>
+                        )}
                     </div>
                 </div>
             </nav>
