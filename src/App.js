@@ -8,6 +8,8 @@ import SignleInventory from "./Pages/SingleInventory/SignleInventory";
 import Footer from "./Components/Footer/Footer";
 import LogInPage from "./Pages/LogInPage/LogInPage";
 import RegisterPage from "./Pages/RegisterPage/RegisterPage";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
     return (
@@ -22,6 +24,7 @@ function App() {
                 <Route path="*" element={<ErrorPage />} />
             </Routes>
             <Footer />
+            <ToastContainer />
         </>
     );
 }
