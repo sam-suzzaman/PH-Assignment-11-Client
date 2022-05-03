@@ -1,0 +1,11 @@
+.footer-container {
+    padding: 1rem 0;
+    background-color: black;
+}
+.footer-text {
+    color: #fff;
+    font-size: calc(0.55rem + 0.35vw);
+    text-align: center;
+    font-weight: 300;
+    text-transform: capitalize;
+}

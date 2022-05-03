@@ -5,6 +5,7 @@ import HomePage from "./Pages/HomePage/HomePage";
 import BlogPage from "./Pages/BlogPage/BlogPage";
 import ErrorPage from "./Pages/ErrorPage/ErrorPage";
 import SignleInventory from "./Pages/SingleInventory/SignleInventory";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/inventory/:id" element={<SignleInventory />} />
                 <Route path="*" element={<ErrorPage />} />
             </Routes>
+            <Footer />
         </>
     );
 }
