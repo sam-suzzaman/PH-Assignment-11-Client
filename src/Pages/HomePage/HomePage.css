@@ -9,7 +9,7 @@
     grid-gap: 2rem 2rem;
 }
 
-/* Media queries */
+/* ====== Media queries ====== */
 @media (max-width: 768px) {
     .inventory-row {
         grid-template-columns: repeat(2, 1fr);

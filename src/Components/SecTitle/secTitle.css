@@ -1,0 +1,8 @@
+.sec-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: calc(1.2rem + 1vw);
+    color: transparent;
+    -webkit-text-stroke: 1.5px #2155cd;
+    margin-bottom: 2rem;
+}
