@@ -1,0 +1,48 @@
+.service {
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1), -3px 3px 5px rgba(0, 0, 0, 0.1),
+        3px -3px 5px rgba(0, 0, 0, 0.1), -3px -3px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 2rem;
+    transition: all 0.3s linear;
+    text-align: center;
+    cursor: pointer;
+}
+.service:hover {
+    background-color: #2155cd;
+}
+
+.service .icon-container {
+    text-align: center;
+    margin-bottom: 1.9rem;
+}
+.service .icon-container > i {
+    font-size: calc(1.4rem + 2.5vw);
+    opacity: 0.5;
+    color: #000;
+    transition: all 0.3s linear;
+}
+.service:hover .icon-container > i {
+    opacity: 1;
+    color: #fff;
+}
+.service .service-title {
+    color: #2155cd;
+    font-weight: 500;
+    font-size: calc(0.95rem + 0.45vw);
+    margin-bottom: 0.5rem;
+    transition: all 0.3s linear;
+}
+.service:hover .service-title {
+    color: #fff;
+}
+
+.service .service-info {
+    color: #000;
+    opacity: 0.8;
+    font-size: calc(0.75rem + 0.35vw);
+    transition: all 0.3s linear;
+}
+.service:hover .service-info {
+    opacity: 0.95;
+    color: #fff;
+}

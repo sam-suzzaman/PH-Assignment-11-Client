@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import ButtonCom from "../ButtonCom/ButtonCom";
 import "./Inventory.css";
 
 const Inventory = (props) => {

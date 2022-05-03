@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "title": "Packing Service",
+        "des": "We are giving the Packing Service for you. If yoy need to packing your products then we can provide these service.",
+        "icon": "fa-solid fa-box-open"
+    },
+    {
+        "id": "12",
+        "title": "Home Delivery",
+        "des": "We have 64 brance-offices in 64 districts all over Bangladesh to provide Home Delivery for you. ",
+        "icon": "fa-solid fa-people-carry-box"
+    },
+    {
+        "id": "3",
+        "title": "Storing Service",
+        "des": "There is sufficient amount of product storing place so that you can easily stored your products after buying.",
+        "icon": "fa-solid fa-warehouse"
+    },
+    {
+        "id": "4",
+        "title": "Customer Care",
+        "des": "We have at least one customer care center in every district to provide a high quality servicing facilities.",
+        "icon": "fa-solid fa-location-dot"
+    },
+    {
+        "id": "5",
+        "title": "Easy Pay",
+        "des": "You can pay for your products from any brance and also can collects them from any brance in Bangladesh",
+        "icon": "fa-solid fa-money-bill-wave"
+    }
+]

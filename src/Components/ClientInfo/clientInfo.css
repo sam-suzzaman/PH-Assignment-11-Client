@@ -1,0 +1,26 @@
+.client-info {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 1.5rem 0.5rem;
+    text-align: center;
+    border-radius: 5px;
+    transition: all 0.3s linear;
+}
+.client-info:hover {
+    box-shadow: 4px 4px 5px rgba(33, 85, 205, 0.1),
+        -4px 4px 5px rgba(33, 85, 205, 0.1), 4px -4px 5px rgba(33, 85, 205, 0.1),
+        -4px -4px 5px rgba(33, 85, 205, 0.1);
+}
+.client-info .value {
+    font-size: calc(1rem + 1vw);
+    font-weight: 500;
+    color: #2155cd;
+}
+.client-info .text {
+    font-size: calc(1rem + 0.35vw);
+    text-transform: capitalize;
+    font-weight: 400;
+    margin-top: 0.5rem;
+    /* color: #2155cd; */
+    color: #000;
+    opacity: 0.5;
+}

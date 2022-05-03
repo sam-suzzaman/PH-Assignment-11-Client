@@ -39,6 +39,12 @@ const Header = () => {
                         <li>
                             <NavLink to="/blog">blog</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/login">login</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/register">register</NavLink>
+                        </li>
                         <div className="user-info">
                             <img src="" alt="photo" />
                             <span className="name">samsuzzaman</span>

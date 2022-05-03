@@ -3,7 +3,7 @@
     background-color: #e8f9fd;
 }
 
-.inventory-row {
+.content-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem 2rem;
@@ -11,12 +11,38 @@
 
 /* ====== Media queries ====== */
 @media (max-width: 768px) {
-    .inventory-row {
+    .content-row {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 @media (max-width: 576px) {
-    .inventory-row {
+    .content-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========== Services ========= */
+.services-wrapper {
+    padding: 5rem 0;
+}
+
+/* ========== Clients info ====== */
+.client-info-wrapper {
+    padding: 4rem 0;
+}
+.client-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .client-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 400px) {
+    .client-row {
         grid-template-columns: 1fr;
     }
 }
