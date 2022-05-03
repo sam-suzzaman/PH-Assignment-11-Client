@@ -1,0 +1,38 @@
+[
+    {
+        "id": "1",
+        "name": "Like a Pro Headphone",
+        "img": "https://i.ibb.co/w4RnFj8/headphone-1.jpg",
+        "info": "this is a beautiful and comfortable headphone. One of the best selling product.",
+        "price": "$5",
+        "quantity": "100",
+        "supplier": "Albert"
+    },
+    {
+        "id": "2",
+        "name": "Exclusive Headphone",
+        "img": "https://i.ibb.co/85g0xGD/headphone-2.jpg",
+        "info": "this is a beautiful and comfortable headphone. One of the best selling product.",
+        "price": "$15",
+        "quantity": "50",
+        "supplier": "Robert"
+    },
+    {
+        "id": "3",
+        "name": "Popular Headphone",
+        "img": "https://i.ibb.co/xCdPH46/headphone-3.jpg",
+        "info": "this is a beautiful and comfortable headphone. One of the best selling product.",
+        "price": "$20",
+        "quantity": "80",
+        "supplier": "Himel Ahmed"
+    },
+    {
+        "id": "4",
+        "name": "A Black Headphone",
+        "img": "https://i.ibb.co/8jZMw4t/headphone-4.jpg",
+        "info": "this is a beautiful and comfortable headphone. One of the best selling product.",
+        "price": "$25",
+        "quantity": "30",
+        "supplier": "Sohel khan"
+    }
+]
