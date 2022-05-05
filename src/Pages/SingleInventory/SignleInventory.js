@@ -46,6 +46,26 @@ const SignleInventory = () => {
         setUpdate("");
     };
 
+    const handleInventoryDelivery = () => {
+        const { quantity, ...restInventory } = inventory;
+        const newQuantity = quantity - 1;
+        if (newQuantity > 0) {
+            const newInventory = { quantity: newQuantity, ...restInventory };
+            const url = `http://localhost:5000/inventories/${id}`;
+            fetch(url, {
+                method: "PUT",
+                headers: {
+                    "content-type": "application/json",
+                },
+                body: JSON.stringify(newInventory),
+            })
+                .then((res) => res.json())
+                .then((result) => {
+                    toast("Item Deliverd successfully");
+                });
+        }
+    };
+
     return (
         <section className="single-inventory-container">
             <div className="sec-container">
@@ -73,7 +93,12 @@ const SignleInventory = () => {
                             Supplier: <span>{inventory.supplier}</span>
                         </p>
                         <p>Sold</p>
-                        <button className="vally-btn">deliverd</button>
+                        <button
+                            className="vally-btn"
+                            onClick={handleInventoryDelivery}
+                        >
+                            deliverd
+                        </button>
                     </div>
                 </div>
                 {/* form to update */}
