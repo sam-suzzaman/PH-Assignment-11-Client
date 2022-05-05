@@ -10,7 +10,7 @@ import "./HomePage.css";
 
 const HomePage = () => {
     const inventories = useFetch("inventory.json");
-    const services = useFetch("services.json");
+    const services = useFetch("http://localhost:5000/services");
     const clientInfos = useFetch("clientInfo.json");
     const navigate = useNavigate();
     const handleMangeInventories = () => {
