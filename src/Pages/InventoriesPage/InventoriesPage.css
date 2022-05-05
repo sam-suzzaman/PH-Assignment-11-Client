@@ -1,3 +1,69 @@
 .all-inventories-wrapper {
     padding: 5rem 0;
 }
+
+.inventory-table-row {
+    overflow-x: scroll;
+}
+
+.inventory-table-row table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+.inventory-table-row th,
+td {
+    text-align: left;
+    padding: 16px;
+    transition: all 0.3s linear;
+}
+
+.inventory-table-row tbody tr:nth-child(even) {
+    background-color: #e8f9fd;
+}
+
+.inventory-table-row tbody td img {
+    width: 100%;
+    max-width: 50px;
+    object-fit: cover;
+}
+
+.inventory-table-row thead {
+    background-color: #c6f1fa;
+}
+.inventory-table-row thead tr {
+    color: rgba(0, 0, 0, 0.826);
+    text-transform: capitalize;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: calc(0.8rem + 0.25vw);
+}
+
+.inventory-table-row table tbody tr.item-control {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inventory-table-row table tbody tr .table-btn {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #c6f1fa;
+    outline: none;
+    background-color: #ddd;
+    color: #2155cd;
+    text-transform: capitalize;
+    font-weight: 300;
+    font-size: 0.8rem;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: all 0.3s linear;
+}
+.inventory-table-row table tbody tr .table-btn:hover {
+    background-color: #2155cd;
+    color: #fff;
+}
