@@ -15,7 +15,7 @@ const HomePage = () => {
 
     // for Inentories
     useEffect(() => {
-        fetch("http://localhost:5000/inventories")
+        fetch("http://localhost:5000/inventoryCount")
             .then((res) => res.json())
             .then((result) => setInventories(result))
             .catch((err) => console.log(err));
