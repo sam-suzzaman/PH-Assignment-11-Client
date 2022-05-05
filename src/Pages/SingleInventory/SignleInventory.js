@@ -1,12 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import useFetch from "../../hooks/useFetch";
 import SecTitle from "../../Components/SecTitle/SecTitle";
 import "./SignleInventory.css";
 
 const SignleInventory = () => {
-    // const { id } = useParams();
+    const { id } = useParams();
     const navigate = useNavigate();
+    const [inventory, setInventory] = useState({});
+
+    useEffect(() => {
+        const url = `http://localhost:5000/inventories/${id}`;
+        fetch(url)
+            .then((res) => res.json())
+            .then((result) => setInventory(result))
+            .catch((err) => console.log(err.message));
+    }, []);
 
     return (
         <section className="single-inventory-container">
@@ -20,19 +28,19 @@ const SignleInventory = () => {
                     </div>
                     <div className="right-text">
                         <h6>
-                            ID: <span>13234348834</span>
+                            ID: <span>{inventory._id}</span>
                         </h6>
                         <h5>
-                            Name: <span>exclusive headphone</span>
+                            Name: <span>{inventory.name}</span>
                         </h5>
                         <p>
-                            Price: <span>$5</span>
+                            Price: <span>{inventory.price}</span>
                         </p>
                         <p>
-                            Quantity: <span>100</span>
+                            Quantity: <span>{inventory.quantity}</span>
                         </p>
                         <p>
-                            Supplier: <span>Robert</span>
+                            Supplier: <span>{inventory.supplier}</span>
                         </p>
                         <p>Sold</p>
                         <button className="vally-btn">deliverd</button>

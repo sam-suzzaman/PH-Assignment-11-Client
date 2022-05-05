@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Bannar from "../../Components/Bannar/Bannar";
 import ClientInfo from "../../Components/ClientInfo/ClientInfo";
@@ -9,9 +9,26 @@ import useFetch from "../../hooks/useFetch";
 import "./HomePage.css";
 
 const HomePage = () => {
-    const inventories = useFetch("http://localhost:5000/inventories");
-    const services = useFetch("http://localhost:5000/services");
+    const [inventories, setInventories] = useState([]);
+    const [services, setServices] = useState([]);
     const clientInfos = useFetch("clientInfo.json");
+
+    // for Inentories
+    useEffect(() => {
+        fetch("http://localhost:5000/inventories")
+            .then((res) => res.json())
+            .then((result) => setInventories(result))
+            .catch((err) => console.log(err));
+    }, []);
+
+    // for Services
+    useEffect(() => {
+        fetch("http://localhost:5000/services")
+            .then((res) => res.json())
+            .then((result) => setServices(result))
+            .catch((err) => console.log(err));
+    }, []);
+
     const navigate = useNavigate();
     const handleMangeInventories = () => {
         navigate("/allinventories");
@@ -24,7 +41,7 @@ const HomePage = () => {
                 <div className="sec-container">
                     <div className="content-row">
                         {services.map((service) => (
-                            <Service key={service.id} service={service} />
+                            <Service key={service._id} service={service} />
                         ))}
                     </div>
                 </div>
@@ -35,7 +52,7 @@ const HomePage = () => {
                     <div className="content-row">
                         {inventories.map((inventory) => (
                             <Inventory
-                                key={inventory.id}
+                                key={inventory._id}
                                 inventory={inventory}
                             />
                         ))}
