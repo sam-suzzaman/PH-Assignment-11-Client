@@ -7,6 +7,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem 2rem;
+    margin-bottom: 3rem;
 }
 
 /* ====== Media queries ====== */

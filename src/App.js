@@ -11,6 +11,8 @@ import RegisterPage from "./Pages/RegisterPage/RegisterPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import RequireAuth from "./utilities/RequireAuth";
+import InventoriesPage from "./Pages/InventoriesPage/InventoriesPage";
+import AddItemPage from "./Pages/AddItemPage/AddItemPage";
 
 function App() {
     return (
@@ -24,6 +26,22 @@ function App() {
                     element={
                         <RequireAuth>
                             <SignleInventory />
+                        </RequireAuth>
+                    }
+                />
+                <Route
+                    path="/additem"
+                    element={
+                        <RequireAuth>
+                            <AddItemPage />
+                        </RequireAuth>
+                    }
+                />
+                <Route
+                    path="/allinventories"
+                    element={
+                        <RequireAuth>
+                            <InventoriesPage />
                         </RequireAuth>
                     }
                 />

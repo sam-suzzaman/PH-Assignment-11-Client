@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Bannar from "../../Components/Bannar/Bannar";
 import ClientInfo from "../../Components/ClientInfo/ClientInfo";
 import Inventory from "../../Components/Inventory/Inventory";
@@ -11,6 +12,10 @@ const HomePage = () => {
     const inventories = useFetch("inventory.json");
     const services = useFetch("services.json");
     const clientInfos = useFetch("clientInfo.json");
+    const navigate = useNavigate();
+    const handleMangeInventories = () => {
+        navigate("/allinventories");
+    };
     return (
         <>
             <Bannar />
@@ -36,6 +41,12 @@ const HomePage = () => {
                         ))}
                     </div>
                 </div>
+                <button
+                    className="vally-btn single-inventory-btn"
+                    onClick={handleMangeInventories}
+                >
+                    manage inventories
+                </button>
             </section>
             <section className="client-info-wrapper">
                 <div className="sec-container">
