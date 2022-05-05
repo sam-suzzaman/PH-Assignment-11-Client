@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import SecTitle from "../../Components/SecTitle/SecTitle";
 import "./SignleInventory.css";
 
@@ -14,7 +15,36 @@ const SignleInventory = () => {
             .then((res) => res.json())
             .then((result) => setInventory(result))
             .catch((err) => console.log(err.message));
-    }, []);
+    }, [inventory]);
+
+    const [update, setUpdate] = useState("");
+    const handleInventoryUpdate = (e) => {
+        e.preventDefault();
+        const updateNumValue = parseFloat(update);
+        if (updateNumValue == 0) {
+            toast("Enter a value Greater than 0");
+        } else if (updateNumValue < 0) {
+            toast("Enter a Positive Value");
+        } else if (!Number.isInteger(updateNumValue)) {
+            toast("Enter an Integer Number");
+        } else {
+            const { quantity, ...restInventory } = inventory;
+            const newInventory = { quantity: update, ...restInventory };
+            const url = `http://localhost:5000/inventories/${id}`;
+            fetch(url, {
+                method: "PUT",
+                headers: {
+                    "content-type": "application/json",
+                },
+                body: JSON.stringify(newInventory),
+            })
+                .then((res) => res.json())
+                .then((result) => {
+                    toast("Item added successfully");
+                });
+        }
+        setUpdate("");
+    };
 
     return (
         <section className="single-inventory-container">
@@ -48,14 +78,15 @@ const SignleInventory = () => {
                 </div>
                 {/* form to update */}
                 <div className="form-row">
-                    <form>
+                    <form onSubmit={handleInventoryUpdate}>
                         <input
                             type="number"
                             name="quantity"
-                            id=""
+                            value={update}
+                            onChange={(e) => setUpdate(e.target.value)}
                             placeholder="Enter value to Update"
                         />
-                        <button>update</button>
+                        <button type="submit">update</button>
                     </form>
                 </div>
                 {/* Buttons row */}
