@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import SecTitle from "../../Components/SecTitle/SecTitle";
 import "./InventoriesPage.css";
 
@@ -12,6 +13,26 @@ const InventoriesPage = () => {
             .then((result) => setInventories(result))
             .catch((err) => console.log(err));
     }, []);
+
+    // To delete an item
+    const handleDeleteItem = (ID) => {
+        const proceed = window.confirm("Are You Sure? ");
+        if (proceed) {
+            const url = `http://localhost:5000/inventories/${ID}`;
+            fetch(url, {
+                method: "DELETE",
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    const remaining = inventories.filter(
+                        (inventory) => inventory._id !== ID
+                    );
+                    setInventories(remaining);
+                    toast("Item Deleted Successfully");
+                })
+                .catch((err) => console.log(err));
+        }
+    };
 
     return (
         <section className="all-inventories-wrapper">
@@ -50,7 +71,12 @@ const InventoriesPage = () => {
                                         <td>{quantity}</td>
                                         <td>{price}</td>
                                         <td className="item-control">
-                                            <button className="table-btn">
+                                            <button
+                                                onClick={() =>
+                                                    handleDeleteItem(_id)
+                                                }
+                                                className="table-btn"
+                                            >
                                                 delete
                                             </button>
                                         </td>
