@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 import SecTitle from "../../Components/SecTitle/SecTitle";
 import "./AddItemPage.css";
 
@@ -24,7 +25,6 @@ const AddItemPage = () => {
             quantity,
             supplier,
         };
-        console.log(inventory);
         const url = `http://localhost:5000/inventories`;
         fetch(url, {
             method: "POST",
@@ -35,9 +35,15 @@ const AddItemPage = () => {
         })
             .then((res) => res.json())
             .then((result) => {
-                console.log(result);
+                toast("Item added successfully");
             });
-        // console.log(email, product, img, info, price, quantity, supplier);
+        setEmail("");
+        setImg("");
+        setInfo("");
+        setPrice("");
+        setProduct("");
+        setQuantity("");
+        setSupplier("");
     };
     return (
         <section className="add-item-wrapper">

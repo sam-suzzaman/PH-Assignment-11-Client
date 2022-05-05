@@ -1,20 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import SecTitle from "../../Components/SecTitle/SecTitle";
 import "./InventoriesPage.css";
-import useFetch from "./../../hooks/useFetch";
-
-const invenotry = {
-    id: "1",
-    name: "Like a Pro Headphone",
-    img: "https://i.ibb.co/w4RnFj8/headphone-1.jpg",
-    info: "this is a beautiful and comfortable headphone. One of the best selling product.",
-    price: "$5",
-    quantity: "100",
-    supplier: "Albert",
-};
 
 const InventoriesPage = () => {
-    const { name, img, quantity, price, supplier } = invenotry;
+    const [inventories, setInventories] = useState([]);
+
+    // for Inentories
+    useEffect(() => {
+        fetch("http://localhost:5000/inventories")
+            .then((res) => res.json())
+            .then((result) => setInventories(result))
+            .catch((err) => console.log(err));
+    }, []);
 
     return (
         <section className="all-inventories-wrapper">
@@ -32,22 +29,34 @@ const InventoriesPage = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <img src={img} alt="product" />
-                                </td>
-                                <td>
-                                    <h4>{name}</h4>
-                                    <p> {supplier}</p>
-                                </td>
-                                <td>{quantity}</td>
-                                <td>{price}</td>
-                                <td className="item-control">
-                                    <a href="#" className="table-btn">
-                                        delete
-                                    </a>
-                                </td>
-                            </tr>
+                            {inventories.map((inventory) => {
+                                const {
+                                    name,
+                                    _id,
+                                    img,
+                                    quantity,
+                                    price,
+                                    supplier,
+                                } = inventory;
+                                return (
+                                    <tr key={_id}>
+                                        <td>
+                                            <img src={img} alt="product" />
+                                        </td>
+                                        <td>
+                                            <h4>{name}</h4>
+                                            <p> {supplier}</p>
+                                        </td>
+                                        <td>{quantity}</td>
+                                        <td>{price}</td>
+                                        <td className="item-control">
+                                            <button className="table-btn">
+                                                delete
+                                            </button>
+                                        </td>
+                                    </tr>
+                                );
+                            })}
                         </tbody>
                     </table>
                 </div>
