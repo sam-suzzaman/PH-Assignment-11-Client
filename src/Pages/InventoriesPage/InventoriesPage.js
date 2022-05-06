@@ -103,6 +103,12 @@ const InventoriesPage = () => {
                         </tbody>
                     </table>
                 </div>
+                <button
+                    className="vally-btn single-inventory-btn"
+                    onClick={() => navigate("/additem")}
+                >
+                    add new item
+                </button>
             </div>
         </section>
     );

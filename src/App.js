@@ -3,7 +3,6 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./Pages/HomePage/HomePage";
 import BlogPage from "./Pages/BlogPage/BlogPage";
-import ErrorPage from "./Pages/ErrorPage/ErrorPage";
 import SignleInventory from "./Pages/SingleInventory/SignleInventory";
 import Footer from "./Components/Footer/Footer";
 import LogInPage from "./Pages/LogInPage/LogInPage";
@@ -14,6 +13,7 @@ import RequireAuth from "./utilities/RequireAuth";
 import InventoriesPage from "./Pages/InventoriesPage/InventoriesPage";
 import AddItemPage from "./Pages/AddItemPage/AddItemPage";
 import MyItemsPage from "./Pages/MyItemsPage/MyItemsPage";
+import NotFoundPage from "./Pages/NotFoundPage/NotFoundPage";
 
 function App() {
     return (
@@ -56,7 +56,7 @@ function App() {
                 />
                 <Route path="/login" element={<LogInPage />} />
                 <Route path="/register" element={<RegisterPage />} />
-                <Route path="*" element={<ErrorPage />} />
+                <Route path="*" element={<NotFoundPage />} />
             </Routes>
             <Footer />
             <ToastContainer />

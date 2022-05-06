@@ -11,7 +11,7 @@ import "./HomePage.css";
 const HomePage = () => {
     const [inventories, setInventories] = useState([]);
     const [services, setServices] = useState([]);
-    const clientInfos = useFetch("clientInfo.json");
+    const [clientInfos, setClientInfos] = useState([]);
 
     // for Inentories
     useEffect(() => {
@@ -26,6 +26,14 @@ const HomePage = () => {
         fetch("http://localhost:5000/services")
             .then((res) => res.json())
             .then((result) => setServices(result))
+            .catch((err) => console.log(err));
+    }, []);
+
+    // for Client-Informations
+    useEffect(() => {
+        fetch("http://localhost:5000/companyinfo")
+            .then((res) => res.json())
+            .then((result) => setClientInfos(result))
             .catch((err) => console.log(err));
     }, []);
 
@@ -69,7 +77,7 @@ const HomePage = () => {
                 <div className="sec-container">
                     <div className="client-row">
                         {clientInfos.map((client) => (
-                            <ClientInfo key={client.id} client={client} />
+                            <ClientInfo key={client._id} client={client} />
                         ))}
                     </div>
                 </div>
