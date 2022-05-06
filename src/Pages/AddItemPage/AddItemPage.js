@@ -25,7 +25,7 @@ const AddItemPage = () => {
             quantity,
             supplier,
         };
-        const url = `http://localhost:5000/inventories`;
+        const url = `https://fierce-anchorage-64625.herokuapp.com/inventories`;
         fetch(url, {
             method: "POST",
             headers: {

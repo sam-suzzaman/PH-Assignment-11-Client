@@ -7,7 +7,7 @@ const BlogPage = () => {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/blogs")
+        fetch("https://fierce-anchorage-64625.herokuapp.com/blogs")
             .then((res) => res.json())
             .then((result) => setBlogs(result))
             .catch((err) => console.log(err));

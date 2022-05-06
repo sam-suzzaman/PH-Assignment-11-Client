@@ -5,7 +5,6 @@ import ClientInfo from "../../Components/ClientInfo/ClientInfo";
 import Inventory from "../../Components/Inventory/Inventory";
 import SecTitle from "../../Components/SecTitle/SecTitle";
 import Service from "../../Components/Service/Service";
-import useFetch from "../../hooks/useFetch";
 import "./HomePage.css";
 
 const HomePage = () => {
@@ -15,7 +14,7 @@ const HomePage = () => {
 
     // for Inentories
     useEffect(() => {
-        fetch("http://localhost:5000/inventoryCount")
+        fetch("https://fierce-anchorage-64625.herokuapp.com/inventoryCount")
             .then((res) => res.json())
             .then((result) => setInventories(result))
             .catch((err) => console.log(err));
@@ -23,7 +22,7 @@ const HomePage = () => {
 
     // for Services
     useEffect(() => {
-        fetch("http://localhost:5000/services")
+        fetch("https://fierce-anchorage-64625.herokuapp.com/services")
             .then((res) => res.json())
             .then((result) => setServices(result))
             .catch((err) => console.log(err));
@@ -31,7 +30,7 @@ const HomePage = () => {
 
     // for Client-Informations
     useEffect(() => {
-        fetch("http://localhost:5000/companyinfo")
+        fetch("https://fierce-anchorage-64625.herokuapp.com/companyinfo")
             .then((res) => res.json())
             .then((result) => setClientInfos(result))
             .catch((err) => console.log(err));

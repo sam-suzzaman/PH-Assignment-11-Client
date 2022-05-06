@@ -10,7 +10,7 @@ const SignleInventory = () => {
     const [inventory, setInventory] = useState({});
 
     useEffect(() => {
-        const url = `http://localhost:5000/inventories/${id}`;
+        const url = `https://fierce-anchorage-64625.herokuapp.com/inventories/${id}`;
         fetch(url)
             .then((res) => res.json())
             .then((result) => setInventory(result))
@@ -30,7 +30,7 @@ const SignleInventory = () => {
         } else {
             const { quantity, ...restInventory } = inventory;
             const newInventory = { quantity: update, ...restInventory };
-            const url = `http://localhost:5000/inventories/${id}`;
+            const url = `https://fierce-anchorage-64625.herokuapp.com/inventories/${id}`;
             fetch(url, {
                 method: "PUT",
                 headers: {
@@ -51,7 +51,7 @@ const SignleInventory = () => {
         const newQuantity = quantity - 1;
         if (newQuantity >= 0) {
             const newInventory = { quantity: newQuantity, ...restInventory };
-            const url = `http://localhost:5000/inventories/${id}`;
+            const url = `https://fierce-anchorage-64625.herokuapp.com/inventories/${id}`;
             fetch(url, {
                 method: "PUT",
                 headers: {

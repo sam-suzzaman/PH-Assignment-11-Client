@@ -10,7 +10,7 @@ const InventoriesPage = () => {
 
     // for Inentories
     useEffect(() => {
-        fetch("http://localhost:5000/inventories")
+        fetch("https://fierce-anchorage-64625.herokuapp.com/inventories")
             .then((res) => res.json())
             .then((result) => setInventories(result))
             .catch((err) => console.log(err));
@@ -20,7 +20,7 @@ const InventoriesPage = () => {
     const handleDeleteItem = (ID) => {
         const proceed = window.confirm("Are You Sure? ");
         if (proceed) {
-            const url = `http://localhost:5000/inventories/${ID}`;
+            const url = `https://fierce-anchorage-64625.herokuapp.com/inventories/${ID}`;
             fetch(url, {
                 method: "DELETE",
             })
