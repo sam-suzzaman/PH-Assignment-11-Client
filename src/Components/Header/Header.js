@@ -56,6 +56,21 @@ const Header = () => {
                             </>
                         )}
                         {user?.uid && (
+                            <>
+                                <li>
+                                    <NavLink to="/allinventories">
+                                        manage items
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/additem">add items</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/myitems">my items</NavLink>
+                                </li>
+                            </>
+                        )}
+                        {user?.uid && (
                             <div className="user-info">
                                 <img src={user?.photoURL} alt="profile" />
                                 <span className="name">{user?.email}</span>

@@ -13,6 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 import RequireAuth from "./utilities/RequireAuth";
 import InventoriesPage from "./Pages/InventoriesPage/InventoriesPage";
 import AddItemPage from "./Pages/AddItemPage/AddItemPage";
+import MyItemsPage from "./Pages/MyItemsPage/MyItemsPage";
 
 function App() {
     return (
@@ -42,6 +43,14 @@ function App() {
                     element={
                         <RequireAuth>
                             <InventoriesPage />
+                        </RequireAuth>
+                    }
+                />
+                <Route
+                    path="/myitems"
+                    element={
+                        <RequireAuth>
+                            <MyItemsPage />
                         </RequireAuth>
                     }
                 />

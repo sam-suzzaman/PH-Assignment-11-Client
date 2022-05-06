@@ -49,7 +49,7 @@ const SignleInventory = () => {
     const handleInventoryDelivery = () => {
         const { quantity, ...restInventory } = inventory;
         const newQuantity = quantity - 1;
-        if (newQuantity > 0) {
+        if (newQuantity >= 0) {
             const newInventory = { quantity: newQuantity, ...restInventory };
             const url = `http://localhost:5000/inventories/${id}`;
             fetch(url, {
@@ -87,12 +87,16 @@ const SignleInventory = () => {
                             Price: <span>{inventory.price}</span>
                         </p>
                         <p>
-                            Quantity: <span>{inventory.quantity}</span>
+                            Quantity:{" "}
+                            <span>
+                                {inventory.quantity == 0
+                                    ? "Out of Stock"
+                                    : inventory.quantity}
+                            </span>
                         </p>
                         <p>
                             Supplier: <span>{inventory.supplier}</span>
                         </p>
-                        <p>Sold</p>
                         <button
                             className="vally-btn"
                             onClick={handleInventoryDelivery}
