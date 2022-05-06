@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import SecTitle from "../../Components/SecTitle/SecTitle";
 import "./InventoriesPage.css";
 
 const InventoriesPage = () => {
     const [inventories, setInventories] = useState([]);
+    const navigate = useNavigate();
 
     // for Inentories
     useEffect(() => {
@@ -34,6 +36,10 @@ const InventoriesPage = () => {
         }
     };
 
+    const handleItemDetails = (id) => {
+        navigate(`/inventory/${id}`);
+    };
+
     return (
         <section className="all-inventories-wrapper">
             <SecTitle title=" All Inventories" />
@@ -47,6 +53,7 @@ const InventoriesPage = () => {
                                 <th>quantity</th>
                                 <th>price</th>
                                 <th>control</th>
+                                <th>details</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -78,6 +85,16 @@ const InventoriesPage = () => {
                                                 className="table-btn"
                                             >
                                                 delete
+                                            </button>
+                                        </td>
+                                        <td className="item-control">
+                                            <button
+                                                onClick={() =>
+                                                    handleItemDetails(_id)
+                                                }
+                                                className="table-btn"
+                                            >
+                                                details
                                             </button>
                                         </td>
                                     </tr>
