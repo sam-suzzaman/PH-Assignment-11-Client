@@ -1,0 +1,26 @@
+.blog {
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+.blog-question {
+    font-size: calc(1rem + 0.5vw);
+    font-weight: 500;
+    color: #0101ba;
+    margin-bottom: 0.75rem;
+}
+.blog-answer {
+    font-size: calc(0.75rem + 0.25vw);
+    line-height: 1.5rem;
+    color: black;
+    margin-left: 1.5rem;
+    border-left: 1px solid rgba(0, 0, 0, 0.334);
+    padding-left: 0.5rem;
+    border-radius: 5px;
+}
+@media (max-width: 450px) {
+    .blog-answer {
+        margin-left: 0.75rem;
+    }
+}

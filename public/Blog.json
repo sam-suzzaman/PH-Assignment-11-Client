@@ -1,0 +1,14 @@
+[
+    {
+        "question": "Difference Between JavaScript and NodeJS",
+        "answer": "JavaScript হলো একটা Scripting Language. এটা একটা হাই লেভেল প্রোগ্রামিং Language  যা OOP এর ধারণা ব্যবহার করে কিন্তু এর মুল ভিত্তি Prototype Inheritance অন্য দিকে NodeJS হলো একটা cross-platform and opensource javascript runtime environment যেইটা Javascript কে Server-side এ রান করতে সাহায্য করে। এর অনেকগুলো modules রয়েছে এবং এটা মুলত web development এ বেশি ব্যবহার হয়ে থাকে। এছাড়া Javascript হলো একটা scripting programming language যা website এর script কোড লেখার কাজে ব্যবহার করা হয়। JavaScript শুধুমাত্র ব্রাউজারে রান হয়। ব্রাউজারের বাইরে JavaScript কে রান করার জন্য অবশ্যয় NodeJS এর প্রয়োজন। NodeJS মুলত server-side এ ব্যবহার হয়। "
+    },
+    {
+        "question": "When should you use nodejs and when should you use mongodb?",
+        "answer": "NodeJS সাধারণত non-blocking, event-driven servers এর জন্য ব্যবহার হয়। তার মুল কারণ হলো  NodeJS এর Signle-threaded nature. এছাড়া website এর backend API তৈরি করার কাজে NodeJS ব্যবহার হয়ে থাকে। এর পাশাপাশি, Real-time web applications তৈরি করার সবথেকে ভালো টুলস হলো এই NodeJS. এর মাধ্যমে cross-patform applications ও তৈরি করা যায় এবং node application কে চালানোর জন্য অতিরিক্ত কোন কিছুর প্রয়োজন নেই। অন্যদিকে, MongoDB হলো non-relational, NoSQL database. এটা মুলত একটা document database যেকারণে একে document-oriented database or a document store ও বলা হয়। এই ধরনের NoSQL database সাধারণত তখনই সিলেক্ট করা হয় যখন data গুলো docuemnt-centric হয় এবং সেগুলো একটা schema of a relational database এর জন্য উপযুক্ত হয় না। সাথে massive scale এ সেগুলোকে accommodate করার প্রয়োজন হয়। এই বিষয়গুলো যখন প্রয়োজন হয় তখন আমি NodeJS ও MongoDB কে ব্যবহার করি।  "
+    },
+    {
+        "question": "Differences between sql and nosql databases.",
+        "answer": "SQL হলো Relational database management system আর NoSQL হলো non-relational or distributed database management system. SQL database এর একটা নির্দিষ্ট schema থাকে যেখানে NoSQL database এর schema হয় Dynamic. NoSQL database hierarchical data sotrage এর জন্য উপযুক্ত হলেও SQL এই ধরনের ডাটা স্টোরেজ এর জন্য উপযুক্ত না। NoSQL ডাটাবেজ Horizontally scalable যেখানে SQL database Vertically Scalable. যেখানে complex queries কাজ করে সেখানকার জন্য NoSQL এর থেকে ভালো হয় SQL. এগুলোই মুল পার্থক্য SQL & NoSQL database এর ভিতর। "
+    }
+]

@@ -1,0 +1,12 @@
+.blog-wrapper {
+    padding: 5rem 2rem;
+}
+.blog-title {
+    font-size: calc(1.2rem + 1.5vw);
+    color: #0101ba;
+    border-bottom: 1px solid #92ebcc;
+    padding-bottom: 0.35rem;
+}
+.blog-row {
+    margin-top: 2rem;
+}
